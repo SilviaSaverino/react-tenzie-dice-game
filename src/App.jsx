@@ -12,7 +12,7 @@ function App() {
     for(let i = 0;i < 10; i++){
       newDiceSet.push({
         value: Math.ceil(Math.random() * 6),
-        isHeld: true,
+        isHeld: false,
         id: nanoid()
       })
     }
@@ -24,7 +24,10 @@ function App() {
   }
 
   function selectDieOnHold(id){
-    console.log(id)
+    setNewDice(oldDice => oldDice.map(selectedDie => {
+      return selectedDie.id === id ? {...selectedDie, isHeld: !selectedDie.isHeld} : selectedDie
+     }))
+  
   }
 
   const diceElements = newDice.map(singleDie => (
@@ -33,7 +36,8 @@ function App() {
       key={singleDie.id} 
       isHeld={singleDie.isHeld}
       selectDieOnHold={() => selectDieOnHold(singleDie.id)}
-      />))
+      />
+      ))
       
   return (
     <main>
