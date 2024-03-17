@@ -21,6 +21,20 @@ main {
   align-items: center;
 }
 
+.info {
+  padding: 0.8em;
+}
+
+.title {
+  font-size: 50px;
+}
+
+.instructions {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
 .single-die {
   cursor: pointer;
   border: 1px solid grey;
@@ -58,4 +72,11 @@ main {
 
 .roll-dice-btn:hover {
   background-color: #59E391;
+}
+
+
+@media (min-width: 400px){
+  main {
+    max-width: 600px;
+  }
 }
