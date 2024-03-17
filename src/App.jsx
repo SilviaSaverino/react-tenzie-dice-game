@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { nanoid } from 'nanoid'
+import Confetti from "react-confetti"
 import './App.css'
 import Die from "./assets/components/Die"
 
@@ -59,6 +60,7 @@ function App() {
   ))
   return (
     <main>
+      {tenzies && <Confetti />}
       <div className='info'>
         <h1 className="title">Tenzies</h1>
         <p className="instructions">Roll until all dice are the same. </p>
@@ -67,7 +69,9 @@ function App() {
       <div className='die-container'>
         {diceElements}
       </div>
-      <button className="roll-dice-btn" onClick={rollDice}>Roll Dice</button>
+      <button className="roll-dice-btn" onClick={rollDice}>
+      {tenzies ? "New Game" : "Roll Dice"}
+      </button>
     </main>
   )
 }
