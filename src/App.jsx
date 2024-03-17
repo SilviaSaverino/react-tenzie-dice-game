@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import './App.css'
 import Die from "./assets/components/Die"
 
 function App() {
@@ -12,14 +14,17 @@ function App() {
     return newDiceSet
   }
  
-  console.log(getNewDice())
+  function rollDice(){
+    setNewDice(getNewDice())
+  }
 
-  const diceElements = newDice.map(singleDie => <Die value={singleDie} />)
+  const diceElements = newDice.map(singleDie => <Die value={singleDie}/>)
   return (
     <main>
       <div className='die-container'>
         {diceElements}  
       </div>
+      <button className="roll-dice-btn" onClick={rollDice}>Roll Dice</button>
     </main>
   )
 }
