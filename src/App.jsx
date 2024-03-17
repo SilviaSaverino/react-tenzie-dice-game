@@ -12,7 +12,7 @@ function App() {
     for(let i = 0;i < 10; i++){
       newDiceSet.push({
         value: Math.ceil(Math.random() * 6),
-        isHeld: false,
+        isHeld: true,
         id: nanoid()
       })
     }
@@ -23,7 +23,8 @@ function App() {
     setNewDice(getNewDice())
   }
 
-  const diceElements = newDice.map(singleDie => <Die value={singleDie.value} key={singleDie.id}/>)
+  const diceElements = newDice.map(singleDie => <Die value={singleDie.value} key={singleDie.id} isHeld={singleDie.isHeld}/>)
+  
   return (
     <main>
       <div className='die-container'>
