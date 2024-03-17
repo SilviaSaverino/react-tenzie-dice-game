@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import './App.css'
 import Die from "./assets/components/Die"
 
 function App() {
+
+  const [newDice, setNewDice] = useState(getNewDice())
   
   function getNewDice(){
     const newDiceSet = []
@@ -11,21 +11,14 @@ function App() {
     }
     return newDiceSet
   }
+ 
   console.log(getNewDice())
-  
+
+  const diceElements = newDice.map(singleDie => <Die value={singleDie} />)
   return (
     <main>
       <div className='die-container'>
-        <Die value="1"/>
-        <Die />
-        <Die />
-        <Die />
-        <Die />
-        <Die />
-        <Die />
-        <Die />
-        <Die />
-        <Die />
+        {diceElements}  
       </div>
     </main>
   )
