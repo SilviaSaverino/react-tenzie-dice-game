@@ -23,8 +23,18 @@ function App() {
     setNewDice(getNewDice())
   }
 
-  const diceElements = newDice.map(singleDie => <Die value={singleDie.value} key={singleDie.id} isHeld={singleDie.isHeld}/>)
-  
+  function selectDieOnHold(id){
+    console.log(id)
+  }
+
+  const diceElements = newDice.map(singleDie => (
+    <Die 
+      value={singleDie.value} 
+      key={singleDie.id} 
+      isHeld={singleDie.isHeld}
+      selectDieOnHold={() => selectDieOnHold(singleDie.id)}
+      />))
+      
   return (
     <main>
       <div className='die-container'>
