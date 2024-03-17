@@ -7,7 +7,7 @@ function App() {
   return (
     <main>
       <div className='die-container'>
-        <Die />
+        <Die value="1"/>
         <Die />
         <Die />
         <Die />
