@@ -9,7 +9,9 @@ function App() {
   function getNewDice(){
     const newDiceSet = []
     for(let i = 0;i < 10; i++){
-      newDiceSet.push(Math.ceil(Math.random() * 6))
+        newDiceSet.push({
+        value: Math.ceil(Math.random() * 6),
+        isHeld: false})
     }
     return newDiceSet
   }
@@ -18,7 +20,7 @@ function App() {
     setNewDice(getNewDice())
   }
 
-  const diceElements = newDice.map(singleDie => <Die value={singleDie}/>)
+  const diceElements = newDice.map(singleDie => <Die value={singleDie.value}/>)
   return (
     <main>
       <div className='die-container'>
