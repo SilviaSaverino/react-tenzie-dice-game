@@ -1,6 +1,8 @@
 # Tenzie Dice Game
 This project is a React-based web application that simulates the popular dice game called Tenzi. In this game, players roll a set of dice until all dice show the same value, achieving what is known as "Tenzies."
 
+Check out the project [Live Site](https://silviasaverino.github.io/react-tenzie-dice-game/)
+
 ![screenshot of Tenzie project main page](./public/images/tenzie1.png)
 
 ## How to Play
