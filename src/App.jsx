@@ -66,9 +66,9 @@ function App() {
     <main>
       {tenzies && <Confetti />}
       <div className='info'>
-        <h1 className="title">Tenzies</h1>
-        <p className="instructions">Roll until all dice are the same. </p>
-        <p className="instructions"> Click each die to freeze it at its current value between rolls.</p>
+        <h1 className="title">{tenzies ? "TENZIE!" : "Tenzies" }</h1>
+        <p className="instructions">{tenzies ? "Congrats, you won!" : "Roll until all dice are the same." } </p>
+        <p className="instructions">{tenzies ? "" : "Click each die to freeze it at its current value between rolls." } </p>
       </div>
       <div className='die-container'>
         {diceElements}
